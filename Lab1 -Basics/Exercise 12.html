@@ -10,11 +10,18 @@ var svg = d3.select("body")
 
 d3.csv(data,function(d){
 console.log(d)
+if(d[1] = "circle"){
 svg.append(d[1])
 .attr("cx",d[2])
 .attr("cy",d[3])
 .attr("r",d[4])
-.style("color",d[5])
+.attr("fill",d[5])
+if(d[1]="eclipse"){
+svg.append(d[1])
+.attr("cx", d[2])
+.attr("cy", d[3])
+.attr("rx", d[4])
+.attr("ry", d[5])
+}
+}
 })
-
-</script>
