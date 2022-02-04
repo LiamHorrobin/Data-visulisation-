@@ -1,0 +1,41 @@
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<body>
+
+</body>
+<script>
+let heartfailurecsv = 'https://raw.githubusercontent.com/akmand/datasets/master/heart_failure.csv';
+/*
+age,anaemia,creatinine_phosphokinase,diabetes,ejection_fraction,high_blood_pressure,platelets,serum_creatini
+ne,serum_sodium,sex,smoking,time,DEATH_EVENT
+75,0,582,0,20,1,265000,1.9,130,1,0,4,1
+55,0,7861,0,38,0,263358.03,1.1,136,1,0,6,1
+65,0,146,0,20,0,162000,1.3,129,1,1,7,1
+50,1,111,0,20,0,210000,1.9,137,1,0,7,1
+*/
+// Creates 4 paragraphs to store the data in 
+d3.select("body").append("p1").text("Under 30's ")
+d3.select("body").append("p2").text(" 30-40's ")
+d3.select("body").append("p3").text("40-60's ")
+d3.select("body").append("p4").text("Over 60 ")
+// loads in the csv and begins looping through the data
+d3.csv(heartfailurecsv, function(data) {
+// a series of if loops that appends the data to the paragraphs
+if(data.age < 30){
+	d3.selectAll("p1").append("l")
+  .text(data.age+", ")
+}
+else if (data.age >30 && data.age <=40){
+  d3.selectAll("p2").append("l")
+  .text(data.age+", ")
+  }
+ else if (data.age >40 && data.age <=60){
+  d3.selectAll("p3").append("l")
+  .text(data.age+", ")
+  }
+ else if (data.age >60){
+  d3.selectAll("p4").append("l")
+  .text(data.age+", ")
+  }
+});
+
+</script>
