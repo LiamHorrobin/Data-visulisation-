@@ -1,0 +1,43 @@
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<script>
+//Create SVG element
+var svg = d3.select("body")
+.append("svg")
+.attr("width", 400)
+.attr("height", 400)
+.style("border", '1px solid green');
+//Create line element inside SVG
+
+// create 4 lines to make a square
+// create a square with points 100,50 , 200,50 100,150 200,50 
+// with lines connecting the points
+svg.append("line")
+.attr("x1", 100)
+.attr("x2", 200)
+.attr("y1", 50)
+.attr("y2", 50)
+.attr("stroke", "blue")
+
+svg.append("line")
+.attr("x1", 100)
+.attr("x2", 200)
+.attr("y1", 150)
+.attr("y2", 150)
+.attr("stroke", "green")
+
+svg.append("line")
+.attr("x1", 100)
+.attr("x2", 100)
+.attr("y1", 150)
+.attr("y2", 50)
+.attr("stroke", "red")
+
+svg.append("line")
+.attr("x1", 200)
+.attr("x2", 200)
+.attr("y1", 150)
+.attr("y2", 50)
+.attr("stroke", "orange")
+
+
+</script>
