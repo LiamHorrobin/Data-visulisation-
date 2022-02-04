@@ -6,7 +6,7 @@ const barHeight = 20;
 const margin = 1;
 // creates a scale of red and green between 1-6
 // is then used to grade the bar charts 
-var myColour = d3.scaleLinear().domain([1,6]).range(["green","red"])
+var myColour = d3.scaleLinear().domain([0,1000]).range(["green","red"])
 
 var scale = d3.scaleLinear()
 .domain([0,d3.max(data)])
@@ -29,8 +29,8 @@ return scale(d);
 })
 // changed here to add a function to make the bar
 // have different colours depending upon its position
-.attr('fill', function(d, i){
-return myColour(i)
+.attr('fill', function(d){
+return myColour(d)
 
 })
 .attr("height", barHeight - margin)
