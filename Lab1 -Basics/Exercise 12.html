@@ -1,0 +1,20 @@
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<script>
+data = "https://raw.githubusercontent.com/LiamHorrobin/Data-visulisation-/main/Lab1%20-Basics/svg.csv"
+
+var svg = d3.select("body")
+.append("svg")
+.attr("width", 400)
+.attr("height", 400)
+.style("border", '1px solid green')
+
+d3.csv(data,function(d){
+console.log(d)
+svg.append(d[1])
+.attr("cx",d[2])
+.attr("cy",d[3])
+.attr("r",d[4])
+.style("color",d[5])
+})
+
+</script>
