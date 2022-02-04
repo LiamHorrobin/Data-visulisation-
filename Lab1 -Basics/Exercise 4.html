@@ -1,0 +1,13 @@
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<script>
+for (let step = 1; step <11; step++){
+let newdiv = d3.select("body").append("div");
+newdiv.text(step).style("color",function(d){
+if(step <= 5){
+return "red";
+} else {
+return "green";
+}});
+d3.select("div").text("start").style("color","purple")
+}
+</script>
